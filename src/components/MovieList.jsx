@@ -3,6 +3,7 @@ import { Row } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { getAllMovie } from '../redux/actions/movieAction'
 import CardMovie from "./CardMovie"
+import NavBar from './NavBar'
 import PaginationCo from './Pagination';
 const MovieList = () => {
 
@@ -22,22 +23,27 @@ const MovieList = () => {
   }, [dataMovies])
 
   return (
-    <Row className='mt-3'>
-      {
-        movies.length ? (
-          movies.map((movie, index) => {
-            return (<CardMovie key={index} movie={movie} />)
+    <>
+      <NavBar />
 
-          })
-        )
-          :
-          <h2 className="alert alert-danger text-center">لا يوجد أفلام</h2>
-      }
-      {
-        movies.length ? (<PaginationCo />) : null
-      }
+      <Row className='mt-3'>
 
-    </Row >
+        {
+          movies.length ? (
+            movies.map((movie, index) => {
+              return (<CardMovie key={index} movie={movie} />)
+
+            })
+          )
+            :
+            <h2 className="alert alert-danger text-center">لا يوجد أفلام</h2>
+        }
+        {
+          movies.length ? (<PaginationCo />) : null
+        }
+
+      </Row >
+    </>
   )
 }
 

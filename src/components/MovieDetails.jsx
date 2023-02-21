@@ -19,7 +19,7 @@ const MovieDetails = () => {
     getMovieDetails();
   }, [])
   return (
-    <div style={{ overflowX: "hidden" }}>
+    <div style={{ overflowX: "hidden", paddingTop: 50 }}>
       <Row className="justify-content-center">
         <Col md="12" xs="12" sm="12" className="mt-4 ">
           <div className="card-detalis  d-flex align-items-center ">
